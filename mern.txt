@@ -1,0 +1,3373 @@
+Css
+
+
+ 
+Text Overflow 
+
+ 
+ 
+Atribute
+      <a href="">me</a>
+        <a href="me">me</a>
+ 
+a[href] { color: red; }
+a[href=”me”] { color: red; }
+ 
+p[class="me"]{
+    color: red;
+}
+
+::selection
+When select text 
+
+::selection {
+    background: yellow;
+}
+::visited 
+Browser e je link e thakbo take style kora 
+:active
+Click obostay kaj kore
+<a href="#"> Click Me </a>
+a:active{
+    background: red;
+}
+
+:focus
+When we are writing something in the form input field. Then it is work
+
+
+
+
+ 
+
+:checked
+
+input[type="checkbox"]:checked + label {
+    background-color : lightgreen;
+}
+Child select >
+
+CSS এ child combinator হলো “greater than” symbol টা। মানে এই চিহ্ন টা >. কোড লিখতে হয় এই রকম –
+    <ol>
+        <li>WILL be selected</li>
+        <li>WILL be selected</li>
+        <ul>
+            <li>Will NOT be selected</li>
+            <li>Will NOT be selected</li>
+        </ul>
+        <li>WILL be selected</li>
+    </ol>
+
+
+:disabled
+<input type="text" name="username" disabled/>
+input:disabled {
+    background-color : salmon;
+}
+
+::first-letter
+p::first-letter { color: red; }
+
+::first-line
+p::first-letter { color: red; }
+
+::first-child 
+Parent element  er first element
+
+    <ol>
+        <li>WILL be selected</li>  //ol er first child
+        <li>WILL be selected</li>
+        <ul>
+            <li>Will NOT be selected</li> // ul er first child
+            <li>Will NOT be selected</li>
+        </ul>
+        <li>WILL be selected</li>
+    </ol>
+
+:in-range
+<input max="10" min="5" type="number">
+
+input:in-range {
+    border: 5px solid green;
+}
+
+
+
+Adjacent sibling +  >  ~(tild)
+
+Parent element er porer tag ke dorbe
+<div>
+    <p>I'm a paragraph</p>
+    <p>I get selected!</p>
+</div>
+<h3>I am h3 2</h3>
+
+
+div + h3 {
+    color: green;
+}
+div ~ h3 {
+    color: green;
+}
+
+Parent element er vitorer tag ke dorbe
+div > p
+Display: grid / inline-grid 
+Grid-template-columns
+Koto  gulo column hobe
+
+
+Grid-template-columns: auto auto auto {3ta colum , auto width}
+
+
+
+
+
+
+
+
+
+
+
+
+
+01
+Misc
+instanceof 
+02
+Function 
+Function calling ke invoke o bola hoy
+Declaretion function 
+
+Expression function 
+Function ke jokhon variable e assassin / store kori 
+const square = function(num) { return num * num }
+console.log(square(2));
+
+
+Arrow function 
+Callback function 
+Hoche jokhon onno arekti funtioner argument hisabe pass kora hoy. Callback function execute  hobe na, jotokhon porjonto main function  na call hoy.
+
+function cb(name){
+    return name // or other work here
+}
+ 
+function me(callback){
+    callback()
+}
+me(cb)
+
+
+
+Promise 
+step
+Pending
+Fulfilled
+Rejected
+
+
+
+
+
+
+Array
+JavaScript array is an object.
+const points = new Array();
+const points = [];
+
+Check array 
+Array.isArray( array name)
+arayName instanceof Array
+console.log(Array.isArray(cars))
+
+
+const cars = new Array("Saab", "Volvo", "BMW"); or
+const cars = ["sabb", "dkfj"]
+
+console.log( cars[index] )   index start from 0
+
+console.log(cars[cars.length- 1]);  // last item
+
+Property
+arr.length 
+start 1
+Method
+Array to string 
+arr.toString()   – convert to string
+arr.join( ‘-’  )  – convert string with special character or others
+String to Array
+str.split(‘  ‘), +, @, - 
+
+Array add , delete
+arr.push(“Banana” )   – add in array last 
+arr.pop(“Banana” )   –  remove array last element
+arr.shift()  – remove first element
+arr.unshigt() –  add in array first 
+
+Array slice
+array.slice(start, end)  // range er majkhaner element return korbe
+method does not change the original array.
+Returns new array
+Kop mara
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+let slice = fruits.slice(1, 3)
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+let slice = fruits.slice(-3,-1 )
+
+Array splice
+array.splice(index, how many delete, add items)
+Change the main array
+Returns main array
+Add string, num, arr, etc
+
+const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+ fruits.splice(2,2 )
+console.log(fruits);
+
+
+
+Add by length property
+cars[cars.length] = "Honda"  // 
+
+
+Array concat
+Ekti arry’r sathe arekti array’r add . creates a new array
+Also, add a string in array
+arr1.concat(arr2, arr3, arr4)
+arr1.concat( “ string here”)
+arr1.concat( arr2, “ string here”)
+
+Array sorting alphabetically
+The sort() method sorts an array alphabetically:
+arr.sort()  - a-z
+arr.reverse() – z-a
+
+Numeric Sort
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b});
+console.log(points);
+
+
+Find max min  num in array 
+console.log(Math.min.apply(null,arr));
+console.log(Math.min(...arr));
+
+
+JavaScript Array Iteration
+arr.forEach( data , index)
+arr.map( data , index)
+
+Filter
+Its return new array 
+Return match value
+const numbers = [45, 4, 9, 16, 25];
+let n= numbers.filter( data => {
+    return data < 25})  console.log(n);
+
+Every 
+check all element and return true or false
+const numbers = [45, 4, 9, 16, 25];
+let n = numbers.every( data => {
+    return data > 1})  console.log(n);
+
+
+some
+check all element and condition jodi ekta millei true return kore
+const numbers = [45, 4, 9, 16, 25];
+let n = numbers.every( data => {
+    return data > 1 })console.log(n);
+
+
+indexOf and lastIndexOf
+arr.indexOf(element)
+arr.lastIndexOf(ele)
+
+The indexOf() method searches an array for an element value and returns its position 
+If value not match return -1
+const fruits = ["Banana", "Orange", "Lemon", "Apple","Orange"];
+console.log(fruits.indexOf("Orange")); //Return first match index num
+console.log(fruits.lastIndexOf("Orange")); //Return last match index num
+
+Array includes
+array.includes(element, start)
+Search value in an array
+Return true or false
+
+Reduce 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Object
+in JavaScript there is always a default global object.
+Window hocche global object
+
+Async Await
+Async func return promise
+
+
+this
+this keyword refers to js object
+
+
+ Callback function
+ Callback function 
+Callback function
+
+
+
+
+
+
+
+
+
+
+
+Blob
+https://www.w3docs.com/learn-javascript/javascript-blob.html
+
+Strict mode 
+You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables.
+
+Spread Operator
+Concate obj and add new property
+Concate array and add new element
+
+let arr = ["ami", "tumi"];
+let arr2 = ["muri", "khai"];
+console.log([...arr, ...arr2, "Ar", "muri", "khabona"]);  // same obj
+
+Ternary Operator ?
+It is like an if-else condition
+Syntax: condition ? <expression if true> : <expression if false>
+
+
+
+Similar 
+arr?.map(data => console.log(data))  ( array jodi true hoy tobei map cholbe)
+
+
+
+
+
+
+
+
+
+
+Class
+
+Object Oriented Programming 
+-    javaScript is a scripting language, even type missing , Not a class based programming language.   
+-   FROM ES 6+ we can use classes in javaScript for better programming experience and features.  
+-   ES 6 + classes are not too powerful such as Java, PHP, or Python. It’s a syntactic sugar only.
+-   We should learn ES 6+ javaScript for accessing the future tech
+-   ES 6+ are modern JS but all modern code will convert as a vanilla code through babel JS, We should use it for browser capability. 
+
+OOP Features 
+-  Vanilla JS  ( ES 5 features )
+-  Modern JS ( ES 6+ features )
+- Design Pattern concept ( Advance  ) with project 
+
+
+
+Class base OOP - ES6+
+-   Declare a class and init it 
+	class Student {
+		
+}
+
+
+-   Create an instance of this class
+	let obj = new Student();
+
+
+
+-   Constructor method with property access
+	class Student {
+		constructor( p1, p2, p3, . . . ){
+			this.p1 = p1;	
+			this.p2 = p2;
+		}
+		property_name_1 = val_1,
+		property_name_2= val_2,
+
+	}
+
+	object.propertyName;
+
+
+
+-   object method  methods - ( prototypes ) 
+	class Student {
+		constructor( p1, p2, p3, . . . ){
+			this.p1 = p1;	
+			this.p2 = p2;
+		}
+
+		ageCal(){
+
+		}
+
+		currencyConvert(){
+
+		}
+
+
+	}
+	object.methodName();
+
+
+
+
+
+
+
+
+
+-   object method  methods - ( Object Methods ) 
+	class Student {
+		constructor( p1, p2, p3, . . . ){
+			this.p1 = p1;	
+			this.p2 = p2;
+			
+			this.methodName = function(){
+			
+			}
+		}
+
+		
+
+	}
+	object.methodName();
+
+
+
+
+
+
+
+-   Static methods and its use
+	class Student {
+		constructor( p1, p2, p3, . . . ){
+			this.p1 = p1;	
+			this.p2 = p2;
+		}
+
+		static ageCal(){
+
+		}
+
+		static currencyConvert(){
+
+		}
+
+	}
+	Student.ageCal(); 
+	Student.currencyConvert(); 
+
+
+
+
+
+
+
+
+-   Inheritance / Extends 
+	class Student {
+		constructor( p1, p2 ){
+			this.p1 = p1;	
+			this.p2 = p2;
+		}
+
+		ageCal(){
+
+		}
+	}
+
+	class Result extends Student{
+		constructor( p1, p2, r1, r2 ){
+			super(p1,p2);	
+
+		}
+		
+
+		
+	}
+
+
+
+
+-   Get and set for  exchange methods to property 
+	class Student {
+		constructor( p1, p2 ){
+			this.p1 = p1;	
+			this.p2 = p2;
+		}
+	
+set age(){
+		return this.ageCal();
+	}
+
+	ageCal(){
+
+	}
+}
+object.age; 
+
+
+
+
+
+
+
+
+Constructor Based OOP 
+Declare a Constructor 
+function Student(){
+	this.name = ‘Asraf’;
+	this.email = ‘haq@gmail.com’;
+
+	this.ageCal = function(){
+
+	}
+}
+
+
+Create an instance for this constructor 
+let student = new Student(); 
+
+
+
+
+
+
+Set property and method in a constructor  and call
+function Student(){
+	this.name = ‘Asraf’;
+	this.email = ‘haq@gmail.com’;
+
+	this.ageCal = function(){
+
+	}
+}
+
+Call property and method form a constructor 
+
+let student = new Student(); 
+student.name;
+student.email;
+student.ageCal();
+
+Set prototypes methods 
+Student.prototype.ageCal = function(){
+
+}
+Student.prototype.ageCal = () => {
+
+}
+
+Modular application structure 
+-> Put all constructor / class in src/ directory 
+-> make class / Constructor name like this Student, Staff  
+-> set an entry point in js named app.js / index.js 
+
+
+Export and import class / constructor 
+-> set modular type in package.json file 
+{
+	“type”  : “modular”
+}
+
+
+
+now export your any  module from  any module.js  files 
+export const data = {
+	name : ‘Asraful Haque’, 
+	age : 10, 
+	skill  : ‘MERN Stack’
+}
+
+export const food = [‘alo’,’potol’,’lao’];
+
+export function ageCal(){
+	
+}
+
+export class Student {
+
+}
+
+
+Now import those module.js file or different files  
+import { data, food, ageCal, Student } from ‘./src/module.js’;
+import { data } from ‘./src/data.js’;
+import { food } from ‘./src/food.js’;
+import { ageCal  } from ‘./src/age.js’;
+import { Student } from ‘./src/Student.js’;
+
+
+Set alias when import 
+import { Student as Chatro } from ‘./src/Student.js’;
+import { ageCal as boyos  } from ‘./src/age.js’;
+
+Export default   and import 
+export default class Student {
+
+}
+
+class Student {
+
+}
+export default Student; 
+
+
+	import  Student,  { data, food, ageCal } from ‘./src/module.js’;
+	import  AnyName ,  { food, ageCal } from ‘./src/module.js’;
+
+
+
+
+
+
+
+Module exports and requires  
+const data = {
+	name : ‘Asraful Haque’, 
+	age : 10, 
+	skill  : ‘MERN Stack’
+}
+
+module.exports = data;
+
+
+Require a module 
+const data = require(‘data.js’);
+
+
+Get Form Data by FormData Object 
+-> set form fields name 
+-> set method 
+-> now fire submit event 
+
+
+Get Data by FormData Object 
+let form_data = new FormData(e.target);
+let data = Object.formEntries(form_data.entries());
+	
+
+Call Back Function 
+I will Call you  back later 
+Passed argument one function to another 
+A callback function run after finished another function 
+Callback function can be called closer function 
+Callback are asynchronous function 
+
+Syntax of a callback 
+function info( name, year, callback ){
+	
+	callback();
+}
+
+
+
+
+
+
+
+Promise function 
+Make a promise 
+Promise return a resolve and reject data 
+A nice asynchronous function 
+Syntax 
+
+let marks = 30;
+let result = new Promise(( resolve,  reject ) => {
+	if( marks > 32 ){
+		resolve(); 
+	}else {
+		reject(); 
+	}
+
+});
+	
+	result.then( (data) => {
+		console.log(data);
+	}).catch( (error) => {
+		console.log(error);
+	} );
+	
+
+Async Await 
+Async await is asynchronous function 
+Return a promise for better response 
+Syntax 
+
+function ageCal(){
+	let data  = await info();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+-   Polymorphism  
+-   Create a project like GPA, Result 
+-   Prototype methods
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Javascript 
+Data Types 
+Primitive data type (7)
+Object data type (1)
+1. Primitive data types
+A primitive (primitive value, primitive data type) is data that is not an object and has no methods or properties. 
+string
+number
+bigint
+boolean
+undefined
+symbol
+Null
+
+
+
+
+String
+A JavaScript string is zero or more characters written inside quotes. (w3)
+Function
+Closure function 
+Global variables can be made local (private) with closures.
+Loop 
+
+Array 
+find()
+Return first element match
+It does not change the original array
+If no elements found return undefined
+
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 7, 9];
+let x = num.find(data => data > 0)
+console.log(x); //1
+
+
+
+
+Length 
+String length:    
+Count total word
+let me = "mahir"  console.log(obj.length); // 5
+Array length:
+Total elements of array
+console.log(arr.length); 
+
+
+ 
+
+
+
+
+
+
+
+Scope
+Scope determines the accessibility (visibility) of variables.
+
+JavaScript has 3 types of scope:
+Block scope
+Function scope
+Global scope
+
+Block scope 
+These two keywords (let, const ) provide Block Scope in JavaScript. Variables declared inside a { } block cannot be accessed from outside the block:
+{
+	Let x = b;
+const num = 2
+}
+
+Hoisting
+
+
+
+React 
+React is a JavaScript library for building user interfaces
+
+JSX
+JSX produces React “elements”
+React doesn’t require using JSX
+ It also allows React to show more useful error and warning messages.
+You can put any valid JavaScript expression inside the curly braces in JSX.
+Use camelCase
+React css 
+
+Global css 
+Moduler css - Logo.module.css 
+
+// import styles from ‘../Logo.module.css  
+.logo{
+width: 10px
+}
+
+Usage ->    className={sytles.logo}  
+
+
+
+
+
+
+NPM Package
+Multer:
+Cors
+Colors
+Dotenv
+Nodemon
+Continuous  watch server
+
+Jsonwebtoken
+Bcrypt 
+Generate hass password
+Compare password and hass password
+let salt =  bcrypt.genSaltSync(10);Const hassPassword =  bcrypt.hashSync(password, salt);
+
+Nodemailer
+Usage for sending mail
+
+
+Concurrenrly
+Front-end and backend runs at same time
+Skeleton
+$ yarn add react-loading-skeleton
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Core Redux
+A Predictable State Container for JS Apps
+Centralizing the application's state and system logic enables powerful capabilities like undo/redo, state persistence, and much more
+Redux works with any UI layer and has a large ecosystem of add-ons to fit your needs
+There are some state management tools such as Recoil, Rematch, Hookstate, etc  
+
+
+Before Start 
+State 
+Context 
+Reducer 
+
+
+Install & Setup 
+ yarn add react-redux
+yarn add redux
+yarn add redux-thunk  (middle)
+yarn add redux-devtools-extension
+Redux DevTools chrome extension (show state in browser)
+
+Redux Anatomy 
+There are two main features of redux 
+-> reducer 
+-> Store
+Here is the basic state flow of Redux 
+
+
+
+
+
+
+
+
+
+
+
+The advanced flow of redux 
+
+
+
+
+
+
+
+Folder Structure 
+
+
+
+
+
+Redux Structure 
+We can follow any kind of structure for maintaining redux 
+The standard structure of redux is 
+-> actionTypes —  type Name
+-> actions  – dispatch
+-> initialState 
+-> reducer 
+
+
+Redux, React Redux kooks 
+For creating  a store 
+createStore(‘reducer’, ‘middleware’);
+
+
+For Combining  reducer
+combineReducers({  });
+
+
+To get state 
+const dispatch = useSelector( state => state );
+
+
+ Frontend data management with state 
+const dispatch = useDispatch();
+
+
+
+
+
+Redux Middleware 
+Redux middleware run between action and reducer 
+Redux middleware is used to manage the redux side effect 
+We can set any kind of operation before state update 
+Most popular redux middleware redux-thunk, redux-logger, redux-saga, redux-action, redux-reselect . . .  
+
+To use middleware in the store 
+createStore(‘reducer’, ‘middleware’);
+
+
+We can set any kind of middleware by using the applyMiddleware hook 
+createStore(‘reducer’,  applyMiddleware(‘middleware_name’, ) );
+
+
+Redux middleware structure currying function 
+Ekta func er vitore arekta func return kora
+const middlewareRedux = (store) => (next) => (action) => {	—---logic here —----
+	next(action);
+}
+
+
+
+Redux Thunk
+Install redux-thunk to manage the async operation 
+npm install redux-thunk
+
+Core redux code summery
+const middleware =[thunk]
+// create store
+const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(...middleware)) );
+
+// create root reducer
+const rootReducer = combineReducers({
+     products: productReducer,
+     category: ''
+})
+
+Action.js
+// dispatch type define
+const product_request = () => ({type: PRODUCT_REQUEST })
+const product_success = (data) => ({type: PRODUCT_SUCCESS, payload: data })
+const product_failed = (data) => ({type: PRODUCT_FAILED , payload: data })
+ 
+// Get all products
+export const get_all_products = () =>async (dispatch) => {
+     try {
+          dispatch(product_request())
+          await axios.get("http://localhost:5050/api/v1/product")
+          .then(res => {
+               dispatch(product_success(res.data))
+          })
+          .catch(error => {
+               dispatch(product_failed(error.message));
+          })
+     } catch (error) {}}
+actionTypes.js
+// Create action type
+export const PRODUCT_REQUEST = "PRODUCT_REQUEST";
+export const PRODUCT_SUCCESS = "PRODUCT_SUCCESS";
+export const PRODUCT_FAILED = "PRODUCT_FAILED";
+
+initialState.js
+const initialState = {
+     products: [],
+     isLoading: false,
+     isFailed: null
+}
+Reducer.js
+import { PRODUCT_FAILED, PRODUCT_REQUEST, PRODUCT_SUCCESS } from "./actionTypes";
+import initialState from "./initialState";
+ 
+const reducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case PRODUCT_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case PRODUCT_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        products: payload,
+      };
+    case PRODUCT_FAILED:
+      return {
+        ...state,
+        isFailed: payload,
+      };
+    default:
+      return state;
+  }
+};
+ 
+export default reducer;
+Uses
+  const {products, isLoading } = useSelector(state => state.products);
+
+
+
+
+
+
+
+Redux toolkit  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Node JS 
+
+Node is a JavaScript Runtime  
+Node js is open source server environment 
+It allows you to run JS on server 
+Its totally free and its also platform independent 
+It runs on windows, linux, Mac OS, Unix etc 
+
+Why Node JS 
+Send the task to the computer file system 
+Node js can create, open, read, write, delete and close files on server  
+Generate dynamic web pages 
+Connect database and process data cruds 
+
+
+
+
+
+
+
+
+
+
+
+
+History  
+Node. js was written initially by Ryan Dahl in 2009, about thirteen years after the introduction of the first server-side JavaScript environment, Netscape's LiveWire Pro Web. The initial release supported only Linux and Mac OS X. Its development and maintenance was led by Dahl and later sponsored by Joyent.
+
+
+
+Node JS Modules 
+Node module is JS library 
+A set of functions, assets etc for future apps without installation 
+There are three types of modules 
+-> custom 
+-> built In 
+-> developers package module 
+
+
+
+Create a node module   
+In any js file just we need to export our modules and then require other file to access out modules  
+- Create a JS file for building modules 
+- write some modules elements 
+- now export your module element  
+
+module.exports = our modules elements 
+
+- now require your module to other file for access 
+const data = require(‘module path’);  
+Modules scaffolding 
+To add more module elements  in one export we can use scaffolding 
+ const obj = {}; 
+Module with ES6+ syntax 
+
+
+
+
+
+
+
+
+
+
+File System Module  (fs)
+Its a build in modules 
+Read, write, create, update, delete, rename any file  
+We can use also sync for file system process 
+First require http module 
+const fs = require(fs);
+
+
+Now Create any file with data write 
+fs.writeFile(‘file_name’ ,’set_data’, (errors, data) => {
+
+});
+
+
+Now Rename any file name 
+fs.rename(‘old_file_name’ ,‘new_file_name’, (errors) => {
+
+});
+
+
+Now Delete any file    
+fs.unlink(‘file_name’, (errors) => {
+	
+});
+
+
+Now Read any file data with data read 
+fs.readFile(‘file_name’ , (errors, data) => {
+	
+});
+Now append some data to  any file 
+fs.appendFile(‘file_name’ , ‘new_data’ (errors, data) => {
+	
+});
+
+
+Now open a file 
+fs.open(‘file_name’ , ‘mode’, (errors, file) => {
+		
+});
+Create a folder 
+fs.mkdir(‘path’ , {} , (errors, file) => {
+		
+});
+Delete file 
+fs.unlinkSync(file directory)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Path Module  
+Any kind of path related work 
+Require path first 
+const path = require(‘path’);
+
+
+
+Main directory 
+Const __dirname = resolve();
+path.join( __dirname, “other dir”)
+
+
+
+
+
+
+Some path methods 
+- basename 
+- dirname 
+- extname 
+- parse 
+- join 
+
+
+How to use 
+First get your app url
+ path.method(url); 
+
+
+
+
+
+
+
+
+
+
+
+URL Module   
+Any kind of URL related work  
+Require path first 
+const url = require(‘url’); 
+
+const req = url.parse(‘app_url’, true); 
+
+
+Get url request params    
+- host 
+- hostname 
+- pathname 
+- search 
+- searchParams 
+
+
+
+
+
+
+
+
+
+
+
+HTTP Module for Create a server
+It is a built in module 
+It is used to create a server  
+First require http module 
+const http = require(‘http’);
+
+
+Now create a server with listener 
+http.createServer().listener(post_number); 
+
+
+Now server callback with request & response 
+http.createServer( (req, res ) => {
+	res.write(‘ server starting  ’);
+	res.write(‘ server starting  ’);
+	return res.end():	
+}).listener(port_number, ()=> {
+	// After server load 
+}); 
+
+
+
+Now create a basic router with http request 
+http.createServer( (req, res ) => {
+	req.url use it to make a route 	   
+}).listener(port_number);
+
+
+
+
+Developer Package   
+Reusable module or library management system 
+Npm or yarn  is a package manager for node JS 
+We can get any developer module from npm or yarn 
+Install any package by npm 
+npm install package_name  
+npm i package_name 
+npm i package_name --save 
+npm i package_name --save-dev 
+npm i package_name -D 
+
+
+Install any package by yarn  
+yarn add package_name  
+
+
+npm init for package.json file  
+npm init  
+
+
+npm package default setup 
+npm init -y 
+
+
+
+
+
+
+
+Colors Package   
+Colors package is used for set terminal text color  
+Now install nodemon 
+npm install colors  
+
+
+Now setup modemon in package json 
+“Start” : “nodemon entry filename”  
+
+Nodemon Package   
+Nodemon is used for server reload after save 
+Now install nodemon 
+npm install -g nodemon  
+
+
+Now setup modemon in package json 
+“Start” : “nodemon entry filename”  
+
+
+
+
+
+
+
+
+
+Setup Environment variables
+Our system configuration store in env
+First install dotenv package 
+npm install dotenv 
+
+
+Now add config 
+Import dotenv from ‘dotenv’;
+dotenv.config(); 
+
+
+Now create a .env file in your root & set variables 
+.env 
+
+
+Access env variables 
+process.env.VAR_NAME 
+
+
+  
+Essential Array Methods 
+Find
+Filter  
+findIndex 
+lastIndexOf 
+Some 
+Join
+Split 
+Reduce 
+Get Data with POST Request
+We can receive data from req with event 
+
+let body = ‘’;
+req.on(‘data’, (chunk) => {
+	body  += 	chunk.toString();
+});
+req.on(‘end’ () => {
+	totalbodyData = body; 
+}); 
+
+
+
+
+
+
+
+
+
+ES5 & ES6 export import 
+There are two type of module in JS 
+- common JS 
+- module 
+Common JS is default system for ES5 
+Module system is modern JS Syntax 
+
+
+Set module JS system 
+Go to package.json file and set type 
+“type” : “module”
+
+
+Now export module by using ES6+ system 
+export const ageCal = () => { }   
+
+
+Import module from ES6 +
+Import { ageCal } from ‘module.js’;
+
+
+Now export default 
+export default ageCal ;
+
+
+esm  package for replace .js syntax 
+npm install esm 
+
+
+
+
+Status Code 
+   '100': 'Continue',
+    '101': 'Switching Protocols',
+    '102': 'Processing',
+    '103': 'Early Hints',
+    '200': 'OK',
+    '201': 'Created',
+    '202': 'Accepted',
+    '203': 'Non-Authoritative Information',
+    '204': 'No Content',
+    '205': 'Reset Content',
+    '206': 'Partial Content',
+    '207': 'Multi-Status', 
+    '208': 'Already Reported',
+    '226': 'IM Used',
+    '300': 'Multiple Choices',
+    '301': 'Moved Permanently',
+    '302': 'Found',
+    '303': 'See Other',
+    '304': 'Not Modified',
+    '305': 'Use Proxy',
+    '307': 'Temporary Redirect',
+    '308': 'Permanent Redirect',
+    '400': 'Bad Request',
+    '401': 'Unauthorized',
+    '402': 'Payment Required',
+    '403': 'Forbidden',
+    '404': 'Not Found',
+    '405': 'Method Not Allowed',
+    '406': 'Not Acceptable',
+    '407': 'Proxy Authentication Required',
+    '408': 'Request Timeout',
+    '409': 'Conflict',
+    '410': 'Gone',
+    '411': 'Length Required',
+    '412': 'Precondition Failed',
+    '413': 'Payload Too Large',
+    '414': 'URI Too Long',
+    '415': 'Unsupported Media Type',
+    '416': 'Range Not Satisfiable',
+    '417': 'Expectation Failed',
+    '418': "I'm a Teapot",
+    '421': 'Misdirected Request',
+    '422': 'Unprocessable Entity',
+    '423': 'Locked',
+    '424': 'Failed Dependency',
+    '425': 'Too Early',
+    '426': 'Upgrade Required',
+    '428': 'Precondition Required',
+    '429': 'Too Many Requests',
+    '431': 'Request Header Fields Too Large',
+    '451': 'Unavailable For Legal Reasons',
+    '500': 'Internal Server Error',
+    '501': 'Not Implemented',
+    '502': 'Bad Gateway',
+
+
+
+
+
+Express 
+
+create express error handler
+
+// create express error handler
+const errorHandler = (error, req, res, next ) => {
+    const errorStatus = error.status || 500;
+    const errorMessage = error.message || "Unkwon errors";
+ 
+    return res.status(errorStatus).json({
+        status: errorStatus,
+        message: errorMessage,
+        stack: error.stack
+    })
+}
+ 
+export default errorHandler;
+ 
+//Use 
+app.use(errorHandler)
+
+
+create error 
+
+// create Error  
+const createError = (status, msg) => {
+    const err = new Error();
+    err.status = status;
+    err.message = msg;
+    return err;          //send error express error handler
+}
+ 
+export default createError;
+ 
+//calling
+next(createError(400, “msg here”))
+
+
+
+
+
+
+Express 
+
+Error handling 
+Server e kono error  make kore na
+Je kono error next e moddhe dite hoy
+Next() express e error pathay
+next() er moddhe error ba next() call kore next middleware jete pari
+Send error 
+export const getHotel = async (req, res, next) => {
+    try {
+        const data = await Hotel.findById(req.params.id)
+        res.status(200).json(data);
+    } catch (error) {
+        next(error);
+    }
+};
+
+
+Error Handler  middleware
+Error er moddhe error gulo catch kore
+
+ 
+const errorHandler = (error, req, res, next) => {
+ 
+    const errorStatus = error.status || 500;
+    const errorMessage = error.message ||  "Something went wrong! ";
+ 
+    return res.status(errorStatus).json({
+        status: errorStatus,
+        message: errorMessage,
+        stack: error.stack
+    })
+ 
+}
+ 
+export default errorHandler
+
+
+Error handler use in app 
+
+// Error handler
+app.use(errorHandler)
+
+
+
+Create custom error 
+ 
+ 
+const createError = (status, msg) => {
+    const err = new Error();
+    err.status = status;
+    err.message = msg
+    return err
+}
+ 
+export default createError;
+
+
+Call custom error 
+    } catch (error) {
+        return next(createError(404, "not found"));
+    }
+
+
+
+Mongoose
+Database
+A database is an organized collection of structured information.
+SQL
+No SQL
+Schema
+Schema holo database kon type er data pathabo
+
+The permitted SchemaTypes are:
+String
+Number
+Date
+Buffer
+Boolean
+Mixed
+ObjectId
+Array
+Decimal128
+Map
+
+
+Defining Schema:
+
+const brandSchema = mongoose.Schema({
+  name: {
+    type: String,
+    trim: true,
+    unique: true,
+    lowercase: true,
+    enum: ["active", "inactive"],
+    uppercase: true,
+    required: [true, "Fields are required"],
+    match: [/[a-z]*\.[a-z]*@[a-z]*\.[a-z]*/gm, "name kk kk"],
+    validate: {
+      validator: (v) => {
+        return v.length > 5; // always return true or false
+      }, // if true no error msg will show
+      message: "kjdfk",
+    },
+  },
+});
+ 
+
+
+
+Custom validation and message 
+    email: {
+      type: String,
+      unique: true,
+      validate: ({
+        validator: (v) =>{
+			// condition 
+            return v > 5
+        }
+        , message: "kjdfk"})
+    },
+
+
+Schema with regular expression 
+
+match: [ regex, custom msg]
+
+Name: {
+Type: String,
+match: [/[a-z]*\.[a-z]*@[a-z]*\.[a-z]*/gm, "not match or valid"]
+}
+
+Relational Schema
+
+One-way relational data   Start here
+Todo to user
+the reference id on Schema
+Pass post routes with auth check
+Post routes get user by auth check
+Post req. body with userId
+
+
+
+On to do schema:
+  user: {  // property’r je name ta populate e hobe
+    type:mongoose.Types.ObjectId,
+    ref: "User"        // reference on User model ( model name)
+  }
+
+Post todo with auth check 
+router.post("/",checkLogin, async(req, res) => {
+        const newTodo = Todo.create({
+            ...req.body,
+            user: req.userId   //get from authcheck
+        }
+})
+
+Find todo with the user 
+
+router.get("/",checkLogin, async(req, res) => {
+        const newTodo = await Todo.find()
+		.populate("user",{_id: 0, password: 0, __v: 0})  //or
+		.populate("user","name username -_id")  // evabe __v ke bad deoya jayna				
+})
+One-way relational data    Start here
+
+Find relational data with populate
+
+Populate help, find data on other's document
+Category er name pabo 
+    const product = await Product.findOne({ _id: id }).populate("category", 'name'); //get only cat name
+
+
+
+
+
+
+
+
+Two-way relational data
+
+User koto gulo post koreche ta user schemar maddome dB Joma thake
+
+Add relation to user Schema 
+Data array akare Joma thakbe - jehetu onek post thakbe
+    products: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Product'
+        }]
+Jokhon product add hobe tokhon user update korte hobe
+
+   findByIdAndUpdate(id, {$push: { key: value} } )
+
+exports.addNewProducts = async (req, res) => {
+  try { 
+      const data = await Products.create({
+        ...req.body, user: req.userId
+    });
+ 
+    const user = await Admin.findByIdAndUpdate(req.userId, {
+        $push:{
+            products:  data._id
+        }
+    } )
+ 
+
+
+Enum update or update single key value
+  $set: {
+        status: "active",
+      },
+
+
+Count row 
+Count recieve total parameter
+find({}).count(‘total’)
+
+Query Selectors
+Query  Comparison operatiors
+$eq :    Equal to operator
+$lt :      Less than operator
+$lte :    less than or Equal to operator
+$gt :     Greater than operator
+$gte :   greater than or Equal to operator
+$ne :    Not equal to operator
+$in:       In operator / work likes  || or condition
+$nin :   Not In operator
+
+Logical operators
+$and 
+$or 
+
+
+
+
+Aggregate([])
+
+Find data all or specific
+Array of objects
+Modal use to this aggregate
+Use pipeline
+Pipeline
+Stages er somosti hocche pipeline
+$match
+Je data gulor sathe match korte chai
+Search doc and returns all matches doc
+{$match: { key : value ( value with condition ) }}
+
+Match one
+{$match: {salery: { $lt: 35000 }} }
+
+Match Many
+      Pattern 1 
+db.demo.aggregate([
+        { $match : {salery:{ $gt: 35000 } }},  // condtion on salery
+        { $match : {city: "Tangail" } } // condition on city
+])
+  Pattern 2  *
+db.demo.aggregate([
+{ $match: {$and: [
+    {salery: {$gt: 35000}},
+    {city: "Dhaka" },
+    {designation: "Developer"}
+]}}
+])
+
+Regex match 
+db.demo.aggregate([
+    { $match: 
+       {name: /^M[a-z]*/ }  
+    }
+])
+
+In find method 
+db.demo.find(  {designation: /Developer/ } )
+
+Match with $in operator 
+Ekoi ki er moddhe onek gulo value dara search 
+Match value gulo return korbe
+
+
+db.demo.aggregate([
+  { $match: 
+       {name: { $in: ["Mahir", "Mannan", "Rabbil"] }}
+  }
+ ])
+
+In find method 
+   db.demo.find(  {name: { $in : ["Mahir", "Mannan", "Rabbil"] }} )
+
+Sort
+  Syntex:  
+{$sort: { key :   1/-1}}
+1 - Ascending order (a-z)
+-1 - Descending order (z-a)
+  db.test.aggregate([ {$sort:{name: -1}} ])
+
+  In find method
+  db.test.find({}).sort({name: -1})
+limit 
+koto gulo data show korbe
+In aggregate method
+db.test.aggregate([ {$limit:2} ])
+
+In find method
+db.test.find({}).limit(3)
+
+Get first limit data   and last data limit 
+db.test.aggregate([
+    {$sort:{name: 1}},   //stage1- sort first ( a-z )    
+    {$limit: 2}   //stage2 - limit( get limit data )
+ ])
+In finde method
+db.test.find({}).sort({name: 1}).limit(2)
+
+Projection  - $project
+1 - true
+0 - false
+Mane je field gulo show korate chai
+
+   db.demo.aggregate([
+      {$project: {_id: 0, name: 1, designation: 1}}
+    ])
+
+In find method 
+db.demo.find({}, {_id: 0, name: 1 })
+
+
+Skip and limit 
+Its need in pagination
+
+db.demo.aggregate([
+    {$skip: 1}, //skip row number
+    {$limit: 3} // select limit
+])
+
+
+In find method 
+db.demo.find({}).skip(1).limit(2)
+
+
+
+$Group
+Grouping by field name
+The Accumulator operator performs here
+Accumulator Operator
+$avg
+$sum
+$min
+$max
+$count
+$sort
+$count
+Count all doc
+
+db.products.aggregate([
+{
+   $count: "total-item"
+}
+])
+
+
+
+Group
+নির্দিশট কি কে গ্রুপ করতে পারি
+_id er moddhe kiser vittite group korb ta dite hobe
+Shudo mattro unique key gullo show korb ( double asbe na )
+
+
+
+Make group 
+db.demo.aggregate([
+ { $group: {_id: "$designation"}}     // uniqu - Enginner, Developer
+])
+
+$sum
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$designation", 
+            total: {
+                "$sum": "$salery"
+            },
+        }
+    }
+])
+
+
+$avg
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$type", 
+            avg: {
+                "$avg": "$price"
+            },
+        }
+    }
+])
+
+
+$min and $max
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$designation", 
+            maxSalrey: {
+                "$max": "$salery"
+            },
+        }
+    }
+])
+
+
+Grouping and count grouping data 
+  {$group : {_id:"$type", count:{$sum:1}}}
+
+
+
+Without grouping min, max , sum
+
+Group _id er value 0 dite hobe
+
+
+db.demo.aggregate([
+    {
+        $group: {
+            _id: 0, 
+            avg: {
+                "$max": "$salery"
+            },
+        }
+    }
+])
+
+Multiple fields and operations 
+
+
+
+db.demo.aggregate([
+    {
+        $group: {
+            _id: { city : "$city", designation: "Doctor"}, 
+            avg: { $avg : "$salery"},
+            sum: { $sum: "$salery"}
+        
+        }
+    }
+])
+
+
+
+Lookup 
+Connection with other collection
+Find data 
+Create custom id in brand and category
+Connection only custom id not mongodb id
+Ex.
+Product collection er catId er sathe category ‘r catId collection and product collection e categories details custom field e add kora.
+
+Before lookup
+{
+    "name" : "New phone galaxy",
+    "productId" : "16553",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+   }
+After lookup
+{
+    "name" : "New phone galaxy",
+    "productId" : "16553",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+     "catDetails" : [
+          {
+                 "_id" : ObjectId("62dc895952d1721ad095f02f"),
+                "name" : "Software",
+                "catId" : "1122"
+        }
+    ]
+
+   }
+
+
+
+Syntex
+       $lookup : { from : collectionName, localField: keyName, foreignField: keyName, as: InfoName }
+
+db.products.aggregate([
+   {
+
+
+       $lookup : { from :"brands", localField: "brandId", foreignField: "brandId", as: "brandDetails" }
+   }
+])
+
+
+
+Output like this 
+
+{
+    "_id" : ObjectId("62dc908d8f817d3f0d6bfdc0"),
+    "name" : "New phone galaxy",
+    "productId" : "1658622093753",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+    "unit" : "1",
+    "details" : " details here",
+    "updatedAt" : ISODate("2022-07-24T01:05:52.307+0000"),
+    "catDetails" : [
+        {
+            "_id" : ObjectId("62dc895952d1721ad095f02f"),
+            "name" : "Software",
+            "catId" : "1122"
+        }
+    ],
+    "brandDetails" : [
+        {
+            "_id" : ObjectId("62dc8fd36b55b13129de4426"),
+            "name" : "Lavana",
+            "brandId" : "1234"
+        }
+    ]
+}
+
+
+Lookup with projection 
+
+db.products.aggregate([
+    { $lookup: { from: "brands" , localField: "brandId", foreignField: "brandId" , as: "brandDetails"}},
+    {
+        $project: {
+            _id: 0,
+            productName: "$name",
+            price: {$toDouble: "$price"},
+            brandId: 1,
+            catId: 1,
+            brandDetails: 1,
+            brandName: { $first:"$brandDetails.name"} //$first returns array's first element ( 0 index)
+           
+       }
+   }
+])
+
+
+
+
+
+
+
+
+
+Facet operator
+Use multiple pipelines
+
+
+
+
+Arithmetic aggression operators
+$add
+$sub
+$divide
+
+
+
+$divide: 
+db.products.aggregate([
+
+{ $match: { price: { $gt: 20000}} },
+{ $addFields: { "sum" : {$divide: [2,2] } }}
+
+])
+
+
+
+String Aggregation operators
+$concat
+$split
+$toLower
+$toUpper
+$substrBytes
+$indexOfBytes
+$indexOfCP
+
+
+$concat:  []
+db.products.aggregate([
+{ $match: { price: { $gt: 20000}} },
+{ $addFields: { "sum" : {$concat: ["$name" ," ", "$brandId"] } }}
+])
+
+$split: [ key, space/,/- ]
+Key- jake split korbo
+2nd kiser vittite split korbo ( “ ”             “ ,”               “-”)
+db.products.aggregate([
+{ $addFields: { "sum" : {$split: ["$name",  " "] } }}  //split by space
+])
+
+$toUpper
+Converts as uppercase
+{ $addFields: { "sum" : {$toUpper: ["$name"] } }}
+
+Date aggregation operators
+$dayOfYear  1-366
+$dayOfMonth 1-31
+$dayOfWeek  1-7
+$year 
+$month 1-12
+$hour 0-23
+$minute 0-59
+$dateToString
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+A database is an organized collection of structured information.
+SQL
+No SQL
+Schema
+Schema holo database kon type er data pathabo
+
+The permitted SchemaTypes are:
+String
+Number
+Date
+Buffer
+Boolean
+Mixed
+ObjectId
+Array
+Decimal128
+Map
+
+
+Defining Schema:
+
+const brandSchema = mongoose.Schema({
+  name: {
+    type: String,
+    trim: true,
+    unique: true,
+    lowercase: true,
+    enum: ["active", "inactive"],
+    uppercase: true,
+    required: [true, "Fields are required"],
+    match: [/[a-z]*\.[a-z]*@[a-z]*\.[a-z]*/gm, "name kk kk"],
+    validate: {
+      validator: (v) => {
+        return v.length > 5; // always return true or false
+      }, // if true no error msg will show
+      message: "kjdfk",
+    },
+  },
+});
+ 
+
+
+
+Custom validation and message 
+    email: {
+      type: String,
+      unique: true,
+      validate: ({
+        validator: (v) =>{
+			// condition 
+            return v > 5
+        }
+        , message: "kjdfk"})
+    },
+
+
+Schema with regular expression 
+
+match: [ regex, custom msg]
+
+Name: {
+Type: String,
+match: [/[a-z]*\.[a-z]*@[a-z]*\.[a-z]*/gm, "not match or valid"]
+}
+
+Relational Schema
+
+One way relational data    Start here
+Todo to user
+reference id on Schema
+Pass post routes with authckeck
+Post routes get user by authcheck
+Post  req.body with userId
+
+
+
+On todoSchema:
+  user: {  // property’r je name ta populate e hobe
+    type:mongoose.Types.ObjectId,
+    ref: "User"        // reference on User model ( model name)
+  }
+
+Post todo with auth check 
+router.post("/",checkLogin, async(req, res) => {
+        const newTodo = Todo.create({
+            ...req.body,
+            user: req.userId   //get from authcheck
+        }
+})
+
+Find todo with the user 
+
+router.get("/",checkLogin, async(req, res) => {
+        const newTodo = await Todo.find()
+		.populate("user",{_id: 0, password: 0, __v: 0})  //or
+		.populate("user","name username -_id")  // evabe __v ke bad deoya jayna				
+})
+One way relational data    Start here
+
+
+
+
+Two-way relational data
+
+User koto gulo post koreche ta user schemar maddome dB Joma thake
+
+Add relation to user Schema 
+Data array akare Joma thakbe - jehetu onek post thakbe
+    products: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Product'
+        }]
+Jokhon product add hobe tokhon user update korte hobe
+
+   findByIdAndUpdate(id, {$push: { key: value} } )
+
+exports.addNewProducts = async (req, res) => {
+  try { 
+      const data = await Products.create({
+        ...req.body, user: req.userId
+    });
+ 
+    const user = await Admin.findByIdAndUpdate(req.userId, {
+        $push:{
+            products:  data._id
+        }
+    } )
+ 
+
+
+Enum update or update single key value
+  $set: {
+        status: "active",
+      },
+
+
+Count row 
+Count recieve total parameter
+find({}).count(‘total’)
+
+Query Selectors
+Query  Comparison operatiors
+$eq :    Equal to operator
+$lt :      Less than operator
+$lte :    less than or Equal to operator
+$gt :     Greater than operator
+$gte :   greater than or Equal to operator
+$ne :    Not equal to operator
+$in:       In operator / work likes  || or condition
+$nin :   Not In operator
+
+Logical operators
+$and 
+$or 
+
+
+
+
+Aggregate([])
+
+Find data all or specific
+Array of objects
+Modal use to this aggregate
+Use pipeline
+Pipeline
+Stages er somosti hocche pipeline
+$match
+Je data gulor sathe match korte chai
+Search doc and returns all matches doc
+{$match: { key : value ( value with condition ) }}
+
+Match one
+{$match: {salery: { $lt: 35000 }} }
+
+Match Many
+      Pattern 1 
+db.demo.aggregate([
+        { $match : {salery:{ $gt: 35000 } }},  // condtion on salery
+        { $match : {city: "Tangail" } } // condition on city
+])
+  Pattern 2  *
+db.demo.aggregate([
+{ $match: {$and: [
+    {salery: {$gt: 35000}},
+    {city: "Dhaka" },
+    {designation: "Developer"}
+]}}
+])
+
+Regex match 
+db.demo.aggregate([
+    { $match: 
+       {name: /^M[a-z]*/ }  
+    }
+])
+
+In find method 
+db.demo.find(  {designation: /Developer/ } )
+
+Match with $in operator 
+Ekoi ki er moddhe onek gulo value dara search 
+Match value gulo return korbe
+
+
+db.demo.aggregate([
+  { $match: 
+       {name: { $in: ["Mahir", "Mannan", "Rabbil"] }}
+  }
+ ])
+
+In find method 
+   db.demo.find(  {name: { $in : ["Mahir", "Mannan", "Rabbil"] }} )
+
+Sort
+  Syntex:  
+{$sort: { key :   1/-1}}
+1 - Ascending order (a-z)
+-1 - Descending order (z-a)
+  db.test.aggregate([ {$sort:{name: -1}} ])
+
+  In find method
+  db.test.find({}).sort({name: -1})
+limit 
+koto gulo data show korbe
+In aggregate method
+db.test.aggregate([ {$limit:2} ])
+
+In find method
+db.test.find({}).limit(3)
+
+Get first limit data   and last data limit 
+db.test.aggregate([
+    {$sort:{name: 1}},   //stage1- sort first ( a-z )    
+    {$limit: 2}   //stage2 - limit( get limit data )
+ ])
+In finde method
+db.test.find({}).sort({name: 1}).limit(2)
+
+Projection  - $project
+1 - true
+0 - false
+Mane je field gulo show korate chai
+
+   db.demo.aggregate([
+      {$project: {_id: 0, name: 1, designation: 1}}
+    ])
+
+In find method 
+db.demo.find({}, {_id: 0, name: 1 })
+
+
+Skip and limit 
+Its need in pagination
+
+db.demo.aggregate([
+    {$skip: 1}, //skip row number
+    {$limit: 3} // select limit
+])
+
+
+In find method 
+db.demo.find({}).skip(1).limit(2)
+
+
+
+$Group
+Grouping by field name
+The Accumulator operator performs here
+Accumulator Operator
+$avg
+$sum
+$min
+$max
+$count
+$sort
+$count
+Count all doc
+
+db.products.aggregate([
+{
+   $count: "total-item"
+}
+])
+
+
+
+Group
+নির্দিশট কি কে গ্রুপ করতে পারি
+_id er moddhe kiser vittite group korb ta dite hobe
+Shudo mattro unique key gullo show korb ( double asbe na )
+
+
+
+Make group 
+db.demo.aggregate([
+ { $group: {_id: "$designation"}}     // uniqu - Enginner, Developer
+])
+
+$sum
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$designation", 
+            total: {
+                "$sum": "$salery"
+            },
+        }
+    }
+])
+
+
+$avg
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$type", 
+            avg: {
+                "$avg": "$price"
+            },
+        }
+    }
+])
+
+
+$min and $max
+db.demo.aggregate([
+    {
+        $group: {
+            _id: "$designation", 
+            maxSalrey: {
+                "$max": "$salery"
+            },
+        }
+    }
+])
+
+
+Grouping and count grouping data 
+  {$group : {_id:"$type", count:{$sum:1}}}
+
+
+
+Without grouping min, max , sum
+
+Group _id er value 0 dite hobe
+
+
+db.demo.aggregate([
+    {
+        $group: {
+            _id: 0, 
+            avg: {
+                "$max": "$salery"
+            },
+        }
+    }
+])
+
+Multiple fields and operations 
+
+
+
+db.demo.aggregate([
+    {
+        $group: {
+            _id: { city : "$city", designation: "Doctor"}, 
+            avg: { $avg : "$salery"},
+            sum: { $sum: "$salery"}
+        
+        }
+    }
+])
+
+
+
+Lookup 
+Connection with other collection
+Find data 
+Create custom id in brand and category
+Connection only custom id not mongodb id
+Ex.
+Product collection er catId er sathe category ‘r catId collection and product collection e categories details custom field e add kora.
+
+Before lookup
+{
+    "name" : "New phone galaxy",
+    "productId" : "16553",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+   }
+After lookup
+{
+    "name" : "New phone galaxy",
+    "productId" : "16553",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+     "catDetails" : [
+          {
+                 "_id" : ObjectId("62dc895952d1721ad095f02f"),
+                "name" : "Software",
+                "catId" : "1122"
+        }
+    ]
+
+   }
+
+
+
+Syntex
+       $lookup : { from : collectionName, localField: keyName, foreignField: keyName, as: InfoName }
+
+db.products.aggregate([
+   {
+
+
+       $lookup : { from :"brands", localField: "brandId", foreignField: "brandId", as: "brandDetails" }
+   }
+])
+
+
+
+Output like this 
+
+{
+    "_id" : ObjectId("62dc908d8f817d3f0d6bfdc0"),
+    "name" : "New phone galaxy",
+    "productId" : "1658622093753",
+    "price" : NumberInt(12540),
+    "brandId" : "1234",
+    "catId" : "1122",
+    "unit" : "1",
+    "details" : " details here",
+    "updatedAt" : ISODate("2022-07-24T01:05:52.307+0000"),
+    "catDetails" : [
+        {
+            "_id" : ObjectId("62dc895952d1721ad095f02f"),
+            "name" : "Software",
+            "catId" : "1122"
+        }
+    ],
+    "brandDetails" : [
+        {
+            "_id" : ObjectId("62dc8fd36b55b13129de4426"),
+            "name" : "Lavana",
+            "brandId" : "1234"
+        }
+    ]
+}
+
+
+Lookup with projection 
+
+db.products.aggregate([
+    { $lookup: { from: "brands" , localField: "brandId", foreignField: "brandId" , as: "brandDetails"}},
+    {
+        $project: {
+            _id: 0,
+            productName: "$name",
+            price: {$toDouble: "$price"},
+            brandId: 1,
+            catId: 1,
+            brandDetails: 1,
+            brandName: { $first:"$brandDetails.name"} //$first returns array's first element ( 0 index)
+           
+       }
+   }
+])
+
+
+
+
+
+
+
+
+
+Facet operator
+Use multiple pipelines
+
+
+
+
+Arithmetic aggression operators
+$add
+$sub
+$divide
+
+
+
+$divide: 
+db.products.aggregate([
+
+{ $match: { price: { $gt: 20000}} },
+{ $addFields: { "sum" : {$divide: [2,2] } }}
+
+])
+
+
+
+String Aggregation operators
+$concat
+$split
+$toLower
+$toUpper
+$substrBytes
+$indexOfBytes
+$indexOfCP
+
+
+$concat:  []
+db.products.aggregate([
+{ $match: { price: { $gt: 20000}} },
+{ $addFields: { "sum" : {$concat: ["$name" ," ", "$brandId"] } }}
+])
+
+$split: [ key, space/,/- ]
+Key- jake split korbo
+2nd kiser vittite split korbo ( “ ”             “ ,”               “-”)
+db.products.aggregate([
+{ $addFields: { "sum" : {$split: ["$name",  " "] } }}  //split by space
+])
+
+$toUpper
+Converts as uppercase
+{ $addFields: { "sum" : {$toUpper: ["$name"] } }}
+
+Date aggregation operators
+$dayOfYear  1-366
+$dayOfMonth 1-31
+$dayOfWeek  1-7
+$year 
+$month 1-12
+$hour 0-23
+$minute 0-59
+$dateToString
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+JWT
+Create token
+Verify token
+
+Secret key generator 
+Terminal command:   openssl rand -base64 32
+
+
+Nodemailer for send Mail
+Go to google my account 
+Set app password ( windows )
+Create nodemailer transport 
+Then transport.sendMail()
+
+Add these items in .env file
+MAIL_HOST = smtp.gmail.com
+MAIL_PORT = 587
+MAIL_ID = developermahir@gmail.com
+MAIL_PASS = csifmixkcemmbfsz  ( it will be generated from app password )
+
+export const sendActivationLink = async (to, data) => {
+ 
+// create transport
+let transport = nodemailer.createTransport({
+    host: process.env.MAIL_HOST,
+    port: process.env.MAIL_PORT ,
+    auth: {
+      user: process.env.MAIL_ID,
+      pass: process.env.MAIL_PASS,
+    },
+  });
+ 
+ 
+ 
+  // send activation mail
+  try {
+    await transport.sendMail({
+      from: `Facebook Pro <${process.env.MAIL_ID}>`,  
+      subject: "Account Activation",
+      to: to,
+      html: `
+      <div style=" background-color: bisque;
+      padding: 20px;">
+    <div>
+    <h2>Dear ${data.name}</h2>
+        <a href="${data.link}">Check activation Link</a>
+    </div>
+</div>
+ 
+ 
+     
+      `
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+
+Auth 1 
+Auth2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Socket
+WebSocket io 
+WebSocket is a computer communication protocol, which provides communication channels over a single TCP (Transmission Control Protocol) connection 
+Real Time Communication from server to browser and reverse 
+Bidirectional communication 
+
+Socket io Segment 
+There are two segment of socket io 
+-> Server 
+-> Client 
+
+
+
+Socket in Express 
+We can setup socket in many ways , here we are now going to setup socket in express 
+First create a complete express server 
+Then install socket io
+npm install socket.io 
+
+
+Now convert express server to a socket server
+const { createServer } = require(‘http’); 
+const { Server } = require(‘socket.io’); 
+
+// now catch express server in http 
+const httpServer  = createServer(app);
+
+// now init socket server 
+const io  = new Server(httpServer);
+
+
+
+
+
+
+
+
+
+
+
+
+Socket in Client  
+Now we are going to setup socket in client 
+To setup socket in client, we can use cdn or npm 
+
+Now by using cdn just use this link 
+<script src="https://cdn.socket.io/4.5.3/socket.io.min.js" ></script>
+
+
+Socket include from stand alone process froma  server 
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+</script>
+
+
+Connection Setup 
+Now we need to setup client connection from socket server
+For that now first create a connection from socket instanc 
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	socket.on( ‘disconnect’ , () =>  {
+		console.log(‘client is disconnected’);
+	}):
+});
+
+
+
+
+Server to Client Data 
+For apps requirements we need to send data from server to client and client to server 
+For that we can send it from server like this 
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	socket.send( ‘I love Socket );
+	socket.emit( ‘emitName’, ‘I love Socket’ );[s-c and c-s]
+});
+
+
+Now receive data from client 
+<script src="/socket.io/socket.io.js"></script>
+<script>
+const socket = io();
+
+	// from send event
+socket.on(‘message’, (data) => {
+	console.log(data);
+});
+
+// from emit event
+socket.on(emitName, (data) => {
+	console.log(data);
+});
+	
+	
+</script>
+ 
+
+Emitting multiple 
+We can also send multiple data in emitting 
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	socket.emit( ‘emitName’, ‘agr1’, ‘agr2’, ‘agr3’  );
+});
+
+
+Receive multiple data from client 
+socket.on(emitName, (data1, data2, data3) => {
+	console.log(data);
+});
+
+
+
+Socket events 
+Connect 
+Disconnect 
+Reconnect 
+Message 
+Ping 
+Join 
+Leave
+
+
+
+
+
+
+Brodcusting 
+If we want to update all clients data after changing one client user interact then we need to use socket  brodcusting 
+Now create a brodcusting 
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	io.sockets.emit( ‘emitName’, ‘agr1’, ‘agr2’, ‘agr3’  );
+});
+
+
+
+Namechace  
+We can create many connection under namespace 
+Namespace differ the socket endpoint 
+To create a namespace 
+const io  = new Server(httpServer);
+const personalChat = io.of(‘/personal’);
+const groupChat = io.of(‘/group);
+
+
+
+
+
+
+
+
+
+Rooms 
+A room is a arbitrary channel that can join and leave. It can be used to broadcast events to a subset of clients 
+Room is used to broadcast an events with many clients 
+To join a room 
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	socket.join(‘room-name-1’):
+	io.sockets.in(‘room-name).emit(‘eventName’,’data’);
+
+	socket.join(‘room-name-2’):
+	io.sockets.in(‘room-name).emit(‘eventName’,’data’);
+
+});
+
+Get a room size ( joined member numbers )
+io.on( ‘connection’ , (socket) => {
+	console.log(‘client is connected’);
+	socket.join(‘room-name-1’):
+	let memberCount = io.sockets.adapter.rooms.get(‘room-name’).size;
+	io.sockets.in(‘room-name).emit(‘eventName’,’data’);
+
+	socket.join(‘room-name-2’):
+	io.sockets.in(‘room-name).emit(‘eventName’,’data’);
+
+});
+
+
+
+
+
+
+WebRTC 
+webRTC means Web Real Time Communication 
+It helps to connect pear to pear for real time 
+webRTC is used to make video & audio share in real time 
+Also used to file share or transfer 
+Its opensource & free 
+We just need to use webRTC supported browser like chrome, mozilla, opera, edge, android etc 
+It is aslo available mobile application 
+
+
+webRTC API 
+getUserMedia  ( video, audio )
+getDisplayMedia ( screen share )
+RTCPeerConnection 
+RTCDataChannel 
+GetStats 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+webRTC Signaling 
+To control communication session between two clients 
+
+
+Ice candidates - video, audio , screen information
+Offer - request to  others client
+
+
+
+
+
+
+
+
+
+
+
+
+RTC Peer/client Connection 
+In Every client form other devices are called peer 
+To connect all clients in one peer we use RTCPeerConnection 
+Now create a RTCPeerConnection 
+const peerConn = new RTCPeerConnection(iceServers connection ); 
+
+To setup peer connection we need two type of server like stun server or turn server, those are called iceServer ( interactive connectivity Establishment / no connection lose  )
+
+
+RTC Peer Connection configuration / iceServers
+let connection = {
+	iceServers : [
+			{
+
+urls : [ 'stun:stun1.1.google.com:19302',   		  'stun:stun2.1.google.com:19302'
+]}
+   ]
+   		}
+Send my stream 
+     peerConnection.addStream( stream );
+
+Receive others peet stream 
+           peerConnection.onaddStream = (event) => {
+       		    screenName.srcObject = event.stream;
+            }
+
+Stream API method 
+getAudioTracks 
+getVideoTracks 
+
+RTC Peer Connection API method 
+createOffer 
+createAnswer
+setLocalDescription
+localDescription 
+setRemoteDescription 
+removeDescription 
+onicecandidate 
+ontrack 
+getTracks        ( both audio and video )
+addStream 
+addIceCandidate 
+
+Create SDP Offer 
+Remote client thakbe 
+
+
+Step1 
+
+Create  local stream (default audio false)
+Audio , video  toggle 
+
+Step 2
+
+–Create offer
+Create ice server
+Check offer  ( onicecandidate() )
+Create offer 
+Set offer in local description
+Get remote stream (local stream oi pase remote stream hisabe kaj korbe )
+localStream add track on peerconnection
+Send track to remote stream
+
+
+
+Step 2
+
+– create Answer  offer ( remote client )
+Create ice server
+Check offer  ( onicecandidate() )
+Create answer
+Set offer in local description
+Get remote stream (local stream oi pase remote stream hisabe kaj korbe )
+localStream add track on peerconnection
+Send track to remote stream
+receive remote  offer
+
+
+
+
+
+
+To create SDP ( Session Description protocall ) Offer we can follow this 
+let offer = peerConnection.createOffer();
+peerConnection.setLocalDescription( offer );
+
+
+
+
+
+
+
+Create SDP Answer 
+To create SDP ( Session Description protocall ) Answer we can follow this 
+let answer = peerConnection.createAnswer();
+peerConnection.setLocalDescription( answer );
+
+
+ICE  Candidate  
+Ice candidate is a user in our peer request. 
+We can check is any user are here in ice candidate then we can accept or send any action 
+
+peerConnection.onicecandidate =  ( event ) => {
+	if( event.candidate ){
+		// take action with this candidate 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Npm package 

@@ -1,0 +1,19 @@
+Interview questions MERN/React
+
+---------------
+Closure , Scope, Hoisting, Callback Function, Promise , async await, undefined vs null,Mutable Vs Immutable, this keyword, Call Stack, Event Loop, and Task Queue, কি , কেন , কিভাবে
+React
+---------------
+useMemo, usecallback, useeffect, other hook, react virtual dom vs real dom, what is react, why react, কি , কেন , কিভাবে
+Node/Express
+---------------
+middleware , কি , কেন , কিভাবে
+
+
+
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/dev-mahir/mern-note.git
+git push -u origin main
