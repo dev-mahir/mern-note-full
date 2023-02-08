@@ -1,5 +1,4 @@
-Method 1:
-
+##Method 1:
 const [postPhotos, setPostPhotos] = useState([]);
 const handlePostPhotoUpload = (e) => {
 const post_images = [];
