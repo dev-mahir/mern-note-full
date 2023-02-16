@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@layer components {
+  body {
+    @apply bg-gray-50;
+  }
+
+  .container {
+    @apply mx-auto;
+  }
+  .divider {
+    @apply bg-gray-300 h-[1px] w-full;
+  }
+
+  .btn {
+    @apply duration-300 border text-[12px] px-3 py-[6px] font-normal rounded-[3px] sm:text-sm sm:px-6;
+  }
+
+  .btn-icon {
+    @apply flex items-center justify-center rounded-sm gap-x-2 w-6 h-6;
+  }
+
+  .btn-danger {
+    @apply bg-danger border-danger text-white;
+  }
+  .btn-primary {
+    @apply bg-primary border-primary text-white;
+  }
+
+  .btn-success {
+    @apply bg-success border-success text-white;
+  }
+
+  .btn-outline-danger {
+    @apply text-danger border-danger hover:bg-danger  hover:border-danger hover:text-white;
+  }
+  .btn-outline-primary {
+    @apply text-primary border-primary hover:bg-primary hover:border-primary hover:text-white;
+  }
+  .btn-outline-success {
+    @apply text-success border-success hover:bg-success hover:border-success hover:text-white;
+  }
+
+  .form-control input {
+    @apply px-4 py-1 w-full rounded-md outline-none  border focus:border-blue-300 text-gray-500 ;
+  }
+  .form-control input[type="checkbox"] {
+    @apply inline-block w-4 h-4;
+  }
+
+  .form-control textarea {
+    @apply px-4 py-2 w-full rounded-md outline-none  border focus:border-blue-300 text-gray-500 
+  }
+  .form-control select {
+    @apply px-4 py-2 w-full rounded-md outline-none  border focus:border-blue-300 text-gray-500 
+  }
+  .form-control label {
+    @apply block font-medium  mb-1;
+  }
+
+  .deliveryZoneChecked {
+    @apply text-secondary;
+  }
+  .title {
+    @apply text-[23px] font-semibold text-[#444];
+  }
+
+  .card-title {
+    @apply text-[17px] font-medium text-[#5b626b];
+  }
+
+  .card {
+    @apply rounded-md  bg-gray-200;
+  }
+
+  .card-header {
+    @apply flex justify-between items-center  px-5 py-2;
+  }
+}
