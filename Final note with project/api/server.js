@@ -1,11 +1,13 @@
 import express from "express";
 import colors from "colors";
 import dotenv from "dotenv";
+import path, { resolve } from "path";
 import cookieParser from "cookie-parser";
 
 import connectDB from "./config/db.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import userRoute from './routes/user.js'
+import cloudRoute from "./routes/cloud.js";
 
 
 // init express
@@ -17,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(express.static('api/public'))
+
 
 // env config
 const env = dotenv.config();
@@ -30,6 +33,7 @@ const PORT = process.env.PORT || 8080;
 
 
 app.use('/api/v1/user', userRoute)
+app.use('/api/v1/cloud', cloudRoute)
 
 
 

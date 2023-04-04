@@ -1,27 +1,27 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Checkbox from "./components/Checkbox/Checkbox";
-import Upload from "./components/CloudSystem/Gallery/Upload";
-
+import Navbar from "./components/Nabvar/Navbar";
+import Counter from "./components/redux/redux-toolkit/Counter/Counter";
 import Shop from "./pages/Shop";
-import { get_all_product } from "./redux/product/action";
+
 
 function App() {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    // dispatch(get_all_product());
-  }, []);
+
+ 
 
   return (
     <>
-      {/* <Routes>
+      
+      <Navbar/>
+      
+      <Routes>
         <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/form" element={<Checkbox />}></Route>
-      </Routes> */}
+        <Route path="/redux/redux-toolkit/counter" element={<Counter />}></Route>
+      </Routes>
 
-      <Upload/>
+
+ 
     </>
   );
 }

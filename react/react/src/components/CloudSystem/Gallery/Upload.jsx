@@ -20,7 +20,7 @@ const Upload = () => {
     // setPostPhotos(updatedImage);
     setPostPhotos([...updatedImage]);
   }
-  const handlePhotoUpload = (e) => {
+  const handlePhotoUpload = async(e) => {
     e.preventDefault();
     setLoader(true);
     const data = new FormData();
@@ -39,11 +39,12 @@ const Upload = () => {
               secure_url: res.data.secure_url,
               public_id: res.data.public_id
             }
-          ]))
+          ]));
+      
           if (count >= postPhotos.length) {
             setPostPhotos([]);
             setLoader(false);
-            console.log(images);
+           handleClick();
           }
           count++;
         }).catch(error => {
@@ -54,8 +55,8 @@ const Upload = () => {
   }
 
 
-  const handleClick = () => {
-    axios.post("http://localhost:5050/api/v1/cloud", { me: images }).then(res => {
+  const handleClick = async() => {
+    await axios.post("http://localhost:5050/api/v1/cloud", { me: images }).then(res => {
       console.log(res.data);
     }).catch(error => {
       console.log(error);

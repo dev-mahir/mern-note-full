@@ -1,6 +1,6 @@
 import express from 'express'
 import { createProduct,  getSingleProduct,getSingleProductSlug, updateProduct, deleteProduct , getAllProduct, searchProduct} from '../controllers/productController.js';
-import { multerPhotoUpload } from '../utility/multer.js';
+
 
 // init router 
 const router = express.Router();

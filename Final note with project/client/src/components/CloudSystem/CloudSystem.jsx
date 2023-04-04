@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { MdClose } from 'react-icons/md';
 
@@ -6,24 +7,39 @@ const CloudSystem = () => {
   const [photos, setPhotos] = useState([]);
 
   const handleInputChange = (e) => {
-    const files = Array.from(e.target.files);
+    const files = Array.from(e.target.files); // obj to array
     setPhotos((prevState) => ([
       ...prevState,
       ...files
     ]));
   }
+console.log(photos.gallery);
 
 
-
-  const handleRemoveImage = (index) => {
+  const handleRemoveImage = (item) => {
+    const updatedImage = photos.filter((data) => data !== item)
     setPhotos((prevState) => ([
-      ...prevState,
-      photos.filter( (data) => data)
+      ...updatedImage
     ]));
   }
 
 
-  
+  const handlePhotoUpload = async (e) => {
+    e.preventDefault();
+
+    const data = new FormData();
+    photos.forEach((item) => { 
+      data.append('photo', item);
+    });
+    
+    await axios.post('/api/v1/cloud/upload-photo', data).then(res => {
+      console.log(res.data);
+    }
+    ).catch(error => console.log(error));
+  }
+
+
+
   return (
     <div className='container mt-5'>
 
@@ -40,9 +56,9 @@ const CloudSystem = () => {
         <div className="grid grid-cols-5 gap-2">
 
           <div className='col-span-1'>
-            <form className=''>
+            <form onSubmit={handlePhotoUpload}>
               <div className="form-control">
-                <input type="file" onChange={handleInputChange} multiple />
+                <input type="file" name='photo' onChange={handleInputChange} multiple />
               </div>
               <button className='btn btn-sm btn-primary mt-2'>Submit</button>
             </form>
@@ -54,7 +70,7 @@ const CloudSystem = () => {
                 return (
                   <div className='relative'>
                     <img className='h-16 w-16 object-cover rounded-md' src={url} alt="" />
-                    <button onClick={() => handleRemoveImage(index)} className='absolute top-1 right-1 z-50'><MdClose className='text-white bg-primary rounded-md' /></button>
+                    <button onClick={() => handleRemoveImage(item)} className='absolute top-1 right-1 z-50'><MdClose className='text-white bg-primary rounded-md' /></button>
                   </div>
                 )
               })}
